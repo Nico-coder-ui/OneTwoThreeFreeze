@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bykj2b7djy3uv"]
+
+[ext_resource type="Script" uid="uid://c3ewd1hnafoie" path="res://Scripts/player.gd" id="1_4flbx"]
+[ext_resource type="ArrayMesh" uid="uid://khb2cbeygkps" path="res://Assets/Models/Chicken/chicken_mesh_rsc.res" id="2_onrkg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4flbx"]
+size = Vector3(1, 1.0968018, 1)
+
+[node name="Player" type="CharacterBody3D" unique_id=385424990]
+script = ExtResource("1_4flbx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=660877275]
+transform = Transform3D(-0.5, -4.371139e-08, 1.9106855e-15, 0, -2.1855694e-08, -0.5, 4.371139e-08, -0.5, 2.1855694e-08, 0, 0, 0)
+mesh = ExtResource("2_onrkg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=442218839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5484009, -0.007708419)
+shape = SubResource("BoxShape3D_4flbx")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=877168057]
+transform = Transform3D(1, 0, 0, 0, 0.72825134, 0.6853102, 0, -0.6853102, 0.72825134, 0, 8.837614, 3.1283417)

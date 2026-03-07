@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cslasr7v4a0fi"]
+
+[ext_resource type="Script" uid="uid://2fjb6mft6mr0" path="res://Scripts/main.gd" id="1_gqyk6"]
+
+[node name="Script" type="Node3D" unique_id=1452828678]
+script = ExtResource("1_gqyk6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1236713510]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3.484143, 0)

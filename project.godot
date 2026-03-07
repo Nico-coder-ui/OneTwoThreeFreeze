@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="OneTwoThreeFreeze"
+run/main_scene="uid://cslasr7v4a0fi"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

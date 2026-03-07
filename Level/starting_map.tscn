@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://g6fysvm6cr71"]
+
+[ext_resource type="PackedScene" uid="uid://bykj2b7djy3uv" path="res://player.tscn" id="1_2gf0v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e8ge5"]
+albedo_color = Color(0.64, 0.6293333, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kwfox"]
+material = SubResource("StandardMaterial3D_e8ge5")
+size = Vector3(30, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v0sj6"]
+size = Vector3(30, 1, 5)
+
+[node name="StartingMap" type="Node3D" unique_id=1561137482]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=372983078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=38839991]
+mesh = SubResource("BoxMesh_kwfox")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=697956048]
+shape = SubResource("BoxShape3D_v0sj6")
+
+[node name="Player" parent="." unique_id=385424990 instance=ExtResource("1_2gf0v")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)

@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://bjkspcgxsfval"]
+
+[ext_resource type="ArrayMesh" uid="uid://bdo65x8mfdcsm" path="res://Assets/Models/Roads/road_straight_mesh_rsc.res" id="1_hbnwq"]
+[ext_resource type="Script" uid="uid://b1e0xd8s5xp6i" path="res://Scripts/spawning_cars.gd" id="2_uxplp"]
+[ext_resource type="Script" uid="uid://c84p6s7gdhqi6" path="res://Scripts/destroying_cars.gd" id="3_p0v50"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s6253"]
+size = Vector3(2, 0.0869873, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
+size = Vector3(14, 0.61, 98)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p0v50"]
+size = Vector3(3.0319824, 1.4334717, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1pfeh"]
+albedo_color = Color(0.11372549, 0.56078434, 0.14901961, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c4l7y"]
+material = SubResource("StandardMaterial3D_1pfeh")
+size = Vector3(150, 0.995, 45)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_arwxw"]
+size = Vector3(150, 0.995, 45)
+
+[node name="RoadChallenge" type="Node3D" unique_id=1429512744]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Roads1" type="Node3D" parent="." unique_id=1583800437]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -19.451, -0.49, 0)
+
+[node name="Road6" type="StaticBody3D" parent="Roads1" unique_id=1055341413]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -6.119593e-07, 0, -22.244999)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads1/Road6" unique_id=1978569585]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = ExtResource("1_hbnwq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads1/Road6" unique_id=2067229164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.045, 0)
+shape = SubResource("BoxShape3D_s6253")
+disabled = true
+
+[node name="Road5" type="StaticBody3D" parent="Roads1" unique_id=890745473]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, -8.245)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads1/Road5" unique_id=2072018549]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = ExtResource("1_hbnwq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads1/Road5" unique_id=2119790839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.045, 0)
+shape = SubResource("BoxShape3D_s6253")
+disabled = true
+
+[node name="Road4" type="StaticBody3D" parent="Roads1" unique_id=2061391054]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 5.75)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads1/Road4" unique_id=337596550]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = ExtResource("1_hbnwq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads1/Road4" unique_id=1408981908]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.045, 0)
+shape = SubResource("BoxShape3D_s6253")
+disabled = true
+
+[node name="Road3" type="StaticBody3D" parent="Roads1" unique_id=534259509]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 19.74)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads1/Road3" unique_id=1838846352]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = ExtResource("1_hbnwq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads1/Road3" unique_id=409656583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.045, 0)
+shape = SubResource("BoxShape3D_s6253")
+disabled = true
+
+[node name="Road2" type="StaticBody3D" parent="Roads1" unique_id=1812897410]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 33.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads1/Road2" unique_id=1900322656]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = ExtResource("1_hbnwq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads1/Road2" unique_id=1450238844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.045, 0)
+shape = SubResource("BoxShape3D_s6253")
+disabled = true
+
+[node name="Road1" type="StaticBody3D" parent="Roads1" unique_id=1201319665]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 47.701)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads1/Road1" unique_id=522334586]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = ExtResource("1_hbnwq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads1/Road1" unique_id=1976991057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.045, 0)
+shape = SubResource("BoxShape3D_s6253")
+disabled = true
+
+[node name="Road0" type="StaticBody3D" parent="Roads1" unique_id=594730466]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 61.701)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads1/Road0" unique_id=163745327]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = ExtResource("1_hbnwq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads1/Road0" unique_id=1048488455]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+shape = SubResource("BoxShape3D_s6253")
+disabled = true
+
+[node name="RoadFloor" type="StaticBody3D" parent="Roads1" unique_id=148794366]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315, 19.728)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads1/RoadFloor" unique_id=2089268074]
+shape = SubResource("BoxShape3D_floor")
+
+[node name="Spawner1" type="Node3D" parent="Roads1" unique_id=388938902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8996991, 1.5243759, -26)
+script = ExtResource("2_uxplp")
+
+[node name="Spawner2" type="Node3D" parent="Roads1" unique_id=879000212]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.7834861, 1.4212754, 67)
+script = ExtResource("2_uxplp")
+
+[node name="Destroyer1" type="Area3D" parent="Roads1" unique_id=1971453071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1622405, 1.4665992, -25.816895)
+script = ExtResource("3_p0v50")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads1/Destroyer1" unique_id=1847680019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011841059, -0.015686035, 0)
+shape = SubResource("BoxShape3D_p0v50")
+
+[node name="Destroyer2" type="Area3D" parent="Roads1" unique_id=367823509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2500517, 1.4665992, 66.09506)
+script = ExtResource("3_p0v50")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roads1/Destroyer2" unique_id=140334624]
+shape = SubResource("BoxShape3D_p0v50")
+
+[node name="Ground" type="Node3D" parent="." unique_id=1436674008]
+
+[node name="LowGround" type="StaticBody3D" parent="Ground" unique_id=1494839394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/LowGround" unique_id=1928165144]
+mesh = SubResource("BoxMesh_c4l7y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/LowGround" unique_id=1687665293]
+shape = SubResource("BoxShape3D_arwxw")

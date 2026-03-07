@@ -1,0 +1,90 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://datekmljghvr0"
+path="res://.godot/imported/red_car.glb-c3b0aee0278f941f04e200dd39064583.scn"
+
+[deps]
+
+source_file="res://Assets/Models/Cars/red_car.glb"
+dest_files=["res://.godot/imported/red_car.glb-c3b0aee0278f941f04e200dd39064583.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"meshes": {
+"red_car_car_hatchback_Cube_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/Models/Cars/carosserie.res",
+"save_to_file/path": "uid://d1qwqioodg6qu"
+},
+"red_car_car_hatchback_wheel_front_left_Cylinder_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/Models/Cars/roue_avant_gauche.res",
+"save_to_file/path": "uid://c80ck2c7xddoa"
+},
+"red_car_car_hatchback_wheel_front_right_Cylinder_297": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/Models/Cars/roue_avant_droite.res",
+"save_to_file/path": "uid://c7k5cgvtm87hm"
+},
+"red_car_car_hatchback_wheel_rear_left_Cylinder_296": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/Models/Cars/roue_arriere_gauche.res",
+"save_to_file/path": "uid://ckb528vpq51hu"
+},
+"red_car_car_hatchback_wheel_rear_right_Cylinder_298": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Assets/Models/Cars/roue_arriere_droite.res",
+"save_to_file/path": "uid://j4pqm7lrudt1"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

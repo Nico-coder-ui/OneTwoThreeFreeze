@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://53wdgcncjbfs"]
+
+[ext_resource type="Script" uid="uid://kilsppum5gs0" path="res://Scripts/red_car_forward.gd" id="1_6w2ef"]
+[ext_resource type="ArrayMesh" uid="uid://dtbq71xc7itro" path="res://Assets/Models/Cars/carosserie.res" id="1_lkvao"]
+[ext_resource type="ArrayMesh" uid="uid://c5k00baknc4jm" path="res://Assets/Models/Cars/single_wheel.res" id="3_fymre"]
+[ext_resource type="Script" uid="uid://c7klffi47s6n4" path="res://Scripts/wheels_rotation.gd" id="4_6w2ef"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8dpyi"]
+size = Vector3(2.785797, 2.6619873, 5.2680054)
+
+[node name="RigidBody3D" type="RigidBody3D" unique_id=465762630]
+mass = 700.0
+script = ExtResource("1_6w2ef")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2102593662]
+transform = Transform3D(7, 0, 0, 0, -3.059797e-07, -7, 0, 7, -3.059797e-07, 0, 0, 0)
+mesh = ExtResource("1_lkvao")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=105342684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023757935, 0.83099365, 0.0016174316)
+shape = SubResource("BoxShape3D_8dpyi")
+
+[node name="BackRightWheel" type="MeshInstance3D" parent="." unique_id=809150092]
+transform = Transform3D(-7, 0, -6.119594e-07, 0, 7, 0, 6.119594e-07, 0, -7, -1.1196508, 0, -1.7770307)
+mesh = ExtResource("3_fymre")
+script = ExtResource("4_6w2ef")
+
+[node name="BackLeftWheel" type="MeshInstance3D" parent="." unique_id=1876280892]
+transform = Transform3D(-7, 0, -6.119594e-07, 0, 7, 0, 6.119594e-07, 0, -7, 0.9794159, 0, -1.7770307)
+mesh = ExtResource("3_fymre")
+script = ExtResource("4_6w2ef")
+
+[node name="FrontRightWheel" type="MeshInstance3D" parent="." unique_id=1065635826]
+transform = Transform3D(-7, 0, -6.119594e-07, 0, 7, 0, 6.119594e-07, 0, -7, -1.1196508, 0, 1.7107556)
+mesh = ExtResource("3_fymre")
+script = ExtResource("4_6w2ef")
+
+[node name="FrontLeftWheel" type="MeshInstance3D" parent="." unique_id=2043238900]
+transform = Transform3D(-7, 0, -6.119594e-07, 0, 7, 0, 6.119594e-07, 0, -7, 0.9947157, 0, 1.7107556)
+mesh = ExtResource("3_fymre")
+script = ExtResource("4_6w2ef")
