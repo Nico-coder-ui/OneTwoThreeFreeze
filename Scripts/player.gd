@@ -4,11 +4,16 @@ func _ready():
 	add_to_group("player")
 
 const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 6.5
 const KNOCKBACK_FORCE = 15.0
+const ROTATION_SPEED = 10.0  # Vitesse de rotation vers la direction
+const ACCELERATION = 30.0    # Accélération au sol (mouvement progressif)
+const DECELERATION = 20.0    # Décélération au sol
+const AIR_CONTROL = 0.3      # Contrôle en l'air (30% du sol)
 
 var is_dead := false
 var knockback_velocity := Vector3.ZERO
+var gravity_multiplier := 1.0  # Pour la gravité variable du saut
 
 func die(knockback_dir: Vector3) -> void:
 	if is_dead:
@@ -47,18 +52,34 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		if velocity.y > 0 and not Input.is_action_pressed("ui_accept"):
+			velocity += get_gravity() * 2.5 * delta
+		elif velocity.y < 0:
+			velocity += get_gravity() * 1.8 * delta
+		else:
+			velocity += get_gravity() * delta
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction := Vector3(-input_dir.x, 0, -input_dir.y).normalized()
+	
+	var control = ACCELERATION if is_on_floor() else ACCELERATION * AIR_CONTROL
+	
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = move_toward(velocity.x, direction.x * SPEED, control * delta)
+		velocity.z = move_toward(velocity.z, direction.z * SPEED, control * delta)
+		
+		var target_angle: float
+		if absf(input_dir.x) > absf(input_dir.y):
+			target_angle = PI / 2 if input_dir.x > 0 else -PI / 2
+		else:
+			target_angle = 0.0 if input_dir.y > 0 else PI
+		$MeshInstance3D.rotation.y = lerp_angle($MeshInstance3D.rotation.y, target_angle, ROTATION_SPEED * delta)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		var decel = DECELERATION if is_on_floor() else DECELERATION * AIR_CONTROL
+		velocity.x = move_toward(velocity.x, 0, decel * delta)
+		velocity.z = move_toward(velocity.z, 0, decel * delta)
 
 	move_and_slide()
