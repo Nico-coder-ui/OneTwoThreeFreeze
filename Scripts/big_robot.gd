@@ -9,6 +9,7 @@ var is_whistling := false
 var whistle_canvas: CanvasLayer
 var whistle_sprite: TextureRect
 var whistle_player: AudioStreamPlayer
+var freeze_label: Label
 
 func _ready() -> void:
 	_pick_next_turn_time()
@@ -31,6 +32,17 @@ func _setup_whistle_ui() -> void:
 	whistle_player.stream = load("res://Assets/UI/whistle_sound.mp3")
 	add_child(whistle_player)
 
+	freeze_label = Label.new()
+	freeze_label.text = "Freeze !!!"
+	freeze_label.add_theme_font_override("font", load("res://Assets/UI/blue_winter.ttf"))
+	freeze_label.add_theme_font_size_override("font_size", 80)
+	freeze_label.add_theme_color_override("font_color", Color.WHITE)
+	freeze_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	freeze_label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
+	freeze_label.offset_top = 20
+	freeze_label.visible = false
+	whistle_canvas.add_child(freeze_label)
+
 func _pick_next_turn_time() -> void:
 	next_turn_time = randf_range(5.0, 10.0)
 	timer = 0.0
@@ -50,6 +62,7 @@ func _process(delta: float) -> void:
 func _whistle_then_observe() -> void:
 	is_whistling = true
 	whistle_sprite.visible = true
+	freeze_label.visible = true
 	whistle_player.play()
 	var tween = create_tween()
 	tween.tween_interval(1.0)
@@ -67,6 +80,7 @@ func _start_observing() -> void:
 func _stop_observing() -> void:
 	is_observing = false
 	whistle_sprite.visible = false
+	freeze_label.visible = false
 	$MeshInstance3D.rotation.y = 0.0
 	_pick_next_turn_time()
 
