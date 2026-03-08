@@ -35,7 +35,6 @@ func _placeChallenges(challengesList, currentOffset) -> float:
 		var low_ground = ground.get_node("LowGround")
 		var mesh = low_ground.get_node("MeshInstance3D")
 		var length = mesh.get_aabb().size.z * mesh.get_scale().z
-		# Décalage total du sol par rapport à l'origine de la scène
 		var ground_offset_z = ground.position.z + low_ground.position.z
 		print(currentOffset)
 		insTempScene.position.z = currentOffset + length / 2 - ground_offset_z
@@ -68,16 +67,12 @@ func _ready() -> void:
 	
 	currentOffset = _placeStartingMap(currentOffset)
 	
-	#currentOffset = _placeChallenges(challengesList, currentOffset)
+	currentOffset = _placeChallenges(challengesList, currentOffset)
 		
 	currentOffset = _placeEndingMap(currentOffset)
 	
 	var pause_menu = load("res://Level/pause_menu.tscn").instantiate()
 	add_child(pause_menu)
-	
-	
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

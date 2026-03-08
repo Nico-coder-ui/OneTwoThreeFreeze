@@ -4,7 +4,6 @@ const CAR_SCENE = preload("res://red_car.tscn")
 var timer = 0.0
 var spawn_interval = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
 
