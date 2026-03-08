@@ -21,10 +21,10 @@ albedo_color = Color(0, 0.28, 0.0046666623, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_uccv1"]
 material = SubResource("StandardMaterial3D_uccv1")
-size = Vector3(65, 4, 1)
+size = Vector3(65, 10, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s05e8"]
-size = Vector3(65, 4, 1)
+size = Vector3(65, 10, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a40fn"]
 albedo_color = Color(0, 0.11, 0.0018333315, 1)
@@ -39,10 +39,10 @@ albedo_color = Color(0, 0.2784314, 0.003921569, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_s05e8"]
 material = SubResource("StandardMaterial3D_s05e8")
-size = Vector3(1, 4, 6.5)
+size = Vector3(1, 10, 6.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a40fn"]
-size = Vector3(1, 4, 50)
+size = Vector3(1, 10, 50)
 
 [node name="MazeChallenge" type="Node3D" unique_id=23332387]
 
@@ -61,7 +61,7 @@ mesh = SubResource("BoxMesh_b3gfu")
 shape = SubResource("BoxShape3D_uccv1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1535800647]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.364, 2, -24.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.364, 5, -24.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=245845029]
 mesh = SubResource("BoxMesh_uccv1")
@@ -70,7 +70,7 @@ mesh = SubResource("BoxMesh_uccv1")
 shape = SubResource("BoxShape3D_s05e8")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=857308639]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.364, 2, 24.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.364, 5, 24.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3" unique_id=1215351005]
 mesh = SubResource("BoxMesh_uccv1")
@@ -79,7 +79,7 @@ mesh = SubResource("BoxMesh_uccv1")
 shape = SubResource("BoxShape3D_s05e8")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1938229009]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.364, 2, -24.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.364, 5, -24.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=1581396352]
 mesh = SubResource("BoxMesh_uccv1")
@@ -88,7 +88,7 @@ mesh = SubResource("BoxMesh_uccv1")
 shape = SubResource("BoxShape3D_s05e8")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="." unique_id=392915347]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.364, 2, 24.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.364, 5, 24.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D4" unique_id=1318948937]
 mesh = SubResource("BoxMesh_uccv1")
@@ -344,7 +344,7 @@ mesh = SubResource("SphereMesh_14kq6")
 shape = SubResource("SphereShape3D_b3gfu")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1047285651]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.663845, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.664, 5, 0)
 script = ExtResource("1_uccv1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=1270287332]
@@ -355,7 +355,7 @@ mesh = SubResource("BoxMesh_s05e8")
 shape = SubResource("BoxShape3D_a40fn")
 
 [node name="Area3D2" type="Area3D" parent="." unique_id=2096911294]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.27082, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.271, 5, 0)
 script = ExtResource("1_uccv1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D2" unique_id=473778060]

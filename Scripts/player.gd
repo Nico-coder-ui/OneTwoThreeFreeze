@@ -48,7 +48,7 @@ func die(knockback_dir: Vector3) -> void:
 
 func _on_death_finished() -> void:
 	queue_free()
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://Level/menu.tscn")
 
 func _physics_process(delta: float) -> void:
 	if is_dead:

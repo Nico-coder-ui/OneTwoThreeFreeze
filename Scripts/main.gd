@@ -1,7 +1,7 @@
 extends Node3D
 
-const minChallValue = 1
-const maxChallValue = 3
+const minChallValue = 2
+const maxChallValue = 4
 
 const endingMapPath = "res://Level/ending_map.tscn"
 
@@ -68,9 +68,12 @@ func _ready() -> void:
 	
 	currentOffset = _placeStartingMap(currentOffset)
 	
-	currentOffset = _placeChallenges(challengesList, currentOffset)
+	#currentOffset = _placeChallenges(challengesList, currentOffset)
 		
 	currentOffset = _placeEndingMap(currentOffset)
+	
+	var pause_menu = load("res://Level/pause_menu.tscn").instantiate()
+	add_child(pause_menu)
 	
 	
 

@@ -11,9 +11,16 @@ config_version=5
 [application]
 
 config/name="OneTwoThreeFreeze"
-run/main_scene="uid://cslasr7v4a0fi"
+run/main_scene="uid://cmenu00000001"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/stretch/mode="canvas_items"
 
 [physics]
 

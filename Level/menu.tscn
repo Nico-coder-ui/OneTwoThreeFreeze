@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cmenu00000001"]
+
+[ext_resource type="Script" uid="uid://lkpnjmps5ic7" path="res://Scripts/menu.gd" id="1_menu"]
+[ext_resource type="Texture2D" uid="uid://df42c0agiqdr1" path="res://Assets/UI/background_menu.jpg" id="2_bg"]
+[ext_resource type="FontFile" uid="uid://cvi3bjm8hg86g" path="res://Assets/UI/blue_winter.ttf" id="3_font"]
+
+[node name="Menu" type="Control" unique_id=150727423]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1453937988]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=795839168]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.35
+offset_left = -246.5
+offset_top = 80.0
+offset_right = 246.5
+offset_bottom = 130.2
+grow_horizontal = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=1253937857]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 64
+text = "1, 2, 3... Freeze!"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="VBoxContainer" unique_id=319524241]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=358569743]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 32
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=441029186]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 32
+text = "Quit"
