@@ -12,10 +12,14 @@ friction = 0.5
 size = Vector3(2.785797, 2.6619873, 5.2680054)
 
 [node name="RigidBody3D" type="RigidBody3D" unique_id=465762630]
+collision_layer = 4
+collision_mask = 3
 axis_lock_linear_y = true
 mass = 700.0
 physics_material_override = SubResource("PhysicsMaterial_car")
 continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 4
 script = ExtResource("1_6w2ef")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2102593662]
