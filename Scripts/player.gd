@@ -1,19 +1,27 @@
 extends CharacterBody3D
 
+signal player_moved(player)
+
+var robot_ref = null
+
 func _ready():
 	add_to_group("player")
+
+func connect_to_robot(robot) -> void:
+	robot_ref = robot
+	player_moved.connect(robot.on_player_moved)
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 6.5
 const KNOCKBACK_FORCE = 15.0
-const ROTATION_SPEED = 10.0  # Vitesse de rotation vers la direction
-const ACCELERATION = 30.0    # Accélération au sol (mouvement progressif)
-const DECELERATION = 20.0    # Décélération au sol
-const AIR_CONTROL = 0.3      # Contrôle en l'air (30% du sol)
+const ROTATION_SPEED = 10.0
+const ACCELERATION = 30.0
+const DECELERATION = 20.0
+const AIR_CONTROL = 0.3
 
 var is_dead := false
 var knockback_velocity := Vector3.ZERO
-var gravity_multiplier := 1.0  # Pour la gravité variable du saut
+var gravity_multiplier := 1.0
 
 func die(knockback_dir: Vector3) -> void:
 	if is_dead:
@@ -60,6 +68,7 @@ func _physics_process(delta: float) -> void:
 			velocity += get_gravity() * delta
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		player_moved.emit(self)
 		velocity.y = JUMP_VELOCITY
 
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -68,6 +77,7 @@ func _physics_process(delta: float) -> void:
 	var control = ACCELERATION if is_on_floor() else ACCELERATION * AIR_CONTROL
 	
 	if direction:
+		player_moved.emit(self)
 		velocity.x = move_toward(velocity.x, direction.x * SPEED, control * delta)
 		velocity.z = move_toward(velocity.z, direction.z * SPEED, control * delta)
 		
